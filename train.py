@@ -406,7 +406,7 @@ if __name__ == "__main__":
             'adamw': optim.AdamW(param_dicts, Init_lr_fit, betas=(momentum, 0.999), weight_decay=weight_decay),
             'sgd': optim.SGD(param_dicts, Init_lr_fit, momentum=momentum, nesterov=True, weight_decay=weight_decay),
         }[optimizer_type]
-        lr_scale_ratio = [
+        lr_scale_ratio = [ 1, 0.1]
         #lr_scheduler_func = get_lr_scheduler(lr_decay_type, Init_lr_fit, Min_lr_fit, UnFreeze_Epoch)
 
         
