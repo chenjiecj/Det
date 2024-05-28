@@ -300,7 +300,7 @@ class FastDETRTransformer(nn.Module):
                  dropout=0.,
                  activation="relu",
                  #num_denoising=100,
-                 num_denoising=0,
+                 num_denoising=100,
                  label_noise_ratio=0.5,
                  box_noise_scale=1.0,
                  learnt_init_query=False,
