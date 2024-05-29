@@ -282,7 +282,8 @@ if __name__ == "__main__":
         if local_rank == 0:
             print("\nSuccessful Load Key:", str(load_key)[:500], "……\nSuccessful Load Key Num:", len(load_key))
             print("\nFail To Load Key:", str(no_load_key)[:500], "……\nFail To Load Key num:", len(no_load_key))
-            print("\n\033[1;33;44m温馨提示，head部分没有载入是正常现象，Backbone部分没有载入是错误的。\033[0m")
+            print("\n\033[1;33;44mBackbone load partial weight or backbone load full weight\033[0m")
+            print("\n\033[1;33;44mPlease ignore the UserWarning: Detected call of lr_scheduler.step() before optimizer.step() The MultiStep learning rate scheduler milestone is 1000 and the learning rate does not decay\033[0m")
 
     detr_loss = build_loss(num_classes)
     
