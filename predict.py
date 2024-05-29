@@ -87,17 +87,17 @@ if __name__ == "__main__":
         fps = 0.0
         while(True):
             t1 = time.time()
-            # 读取某一帧
+            
             ref, frame = capture.read()
             if not ref:
                 break
-            # 格式转变，BGRtoRGB
+            
             frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
-            # 转变成Image
+            
             frame = Image.fromarray(np.uint8(frame))
-            # 进行检测
+            
             frame = np.array(detr.detect_image(frame))
-            # RGBtoBGR满足opencv显示格式
+            
             frame = cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
             
             fps  = ( fps + (1./(time.time()-t1)) ) / 2
