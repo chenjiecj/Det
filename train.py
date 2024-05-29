@@ -59,7 +59,7 @@ if __name__ == "__main__":
     Freeze_Train = False
 
 
-    Init_lr = 7.5e-4
+    Init_lr = 8.5e-4
     # Min_lr = Init_lr * 0.5
 
     optimizer_type = "adamw"
