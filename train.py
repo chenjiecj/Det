@@ -63,7 +63,7 @@ if __name__ == "__main__":
 
 
     Init_lr = 7.5e-4
-    Min_lr = Init_lr * 0.5
+    # Min_lr = Init_lr * 0.5
     # ------------------------------------------------------------------#
 
     # ------------------------------------------------------------------#
@@ -330,7 +330,9 @@ if __name__ == "__main__":
             classes_path=classes_path, model_path=model_path, input_shape=input_shape, \
             Init_Epoch=Init_Epoch, Freeze_Epoch=Freeze_Epoch, UnFreeze_Epoch=UnFreeze_Epoch, \
             Freeze_batch_size=Freeze_batch_size, Unfreeze_batch_size=Unfreeze_batch_size, Freeze_Train=Freeze_Train, \
-            Init_lr=Init_lr, Min_lr=Min_lr, optimizer_type=optimizer_type, momentum=momentum,
+            Init_lr=Init_lr, 
+            # Min_lr=Min_lr, 
+            optimizer_type=optimizer_type, momentum=momentum,
             # lr_decay_type=lr_decay_type, \
             save_period=save_period, save_dir=save_dir, num_workers=num_workers, num_train=num_train, num_val=num_val
         )
@@ -362,7 +364,7 @@ if __name__ == "__main__":
         
         if optimizer_type in ['adam', 'adamw']:
             Init_lr_fit = Init_lr
-            Min_lr_fit = Min_lr
+            # Min_lr_fit = Min_lr
         else:
             nbs = 64
             lr_limit_max = 5e-2
@@ -448,13 +450,13 @@ if __name__ == "__main__":
                 
                 if optimizer_type in ['adam', 'adamw']:
                     Init_lr_fit = Init_lr
-                    Min_lr_fit = Min_lr
+                    # Min_lr_fit = Min_lr
                 else:
                     nbs = 64
                     lr_limit_max = 5e-2
                     lr_limit_min = 5e-4
                     Init_lr_fit = min(max(batch_size / nbs * Init_lr, lr_limit_min), lr_limit_max)
-                    Min_lr_fit = min(max(batch_size / nbs * Min_lr, lr_limit_min * 1e-2), lr_limit_max * 1e-2)
+                    # Min_lr_fit = min(max(batch_size / nbs * Min_lr, lr_limit_min * 1e-2), lr_limit_max * 1e-2)
                 
                 #lr_scheduler_func = get_lr_scheduler(lr_decay_type, Init_lr_fit, Min_lr_fit, UnFreeze_Epoch)
 
