@@ -49,7 +49,7 @@ class Detection_Transformers(object):
         show_config(**self._defaults)
 
     def generate(self, onnx=False):
-        self.net    = DETR(self.phi, self.backbone, 'sine', 256, self.num_classes, num_queries=300, aux_loss=False)
+        self.net    = DETR(self.backbone,  self.num_classes,  aux_loss=False)
         device      = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.net.load_state_dict(torch.load(self.model_path, map_location=device))
         self.net    = self.net.eval()
