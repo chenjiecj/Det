@@ -157,7 +157,7 @@ class AgentBlock(nn.Module):
         x = x + self.drop_path(self.mlp(self.norm2(x)))
         return x
 
-class AIFI(AgentBlock):
+class AAIFI(AgentBlock):
     """Defines the GloubalAttention transformer layer."""
     def __init__(self, c1, num_heads=8):
         """Initialize the GloubalAttention instance with specified parameters."""
