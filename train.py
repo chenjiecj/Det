@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
     class_names, num_classes = get_classes(classes_path)
 
-    model = DETR(backbone, 'sine', 256, num_classes, 100, pretrained=pretrained, aux_loss=aux_loss)
+    model = DETR(backbone, num_classes,  aux_loss=aux_loss)
 
 
     if model_path != '':
