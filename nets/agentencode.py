@@ -4,7 +4,7 @@ import copy
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .agentattention import AIFI , AgentAttention
+from .agentattention import AAIFI , AgentAttention
 from .dysample import DySample
 from .CARF import CARAFE
 
