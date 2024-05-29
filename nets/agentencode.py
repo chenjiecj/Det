@@ -310,7 +310,7 @@ class agentEncoder(nn.Module):
             TransformerEncoder(copy.deepcopy(encoder_layer), num_encoder_layers) for _ in range(len(use_encoder_idx))
         ])
 
-        self.encoder1 = AIFI(hidden_dim)
+        self.encoder1 = AAIFI(hidden_dim)
 
         # top-down fpn
         self.lateral_convs = nn.ModuleList()
